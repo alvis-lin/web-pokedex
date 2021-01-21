@@ -1,0 +1,28 @@
+/* Pokemon grids */
+
+.pokemon-grid {
+    display: grid;
+    grid-gap: 15px;
+    padding: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+}
+
+.pokemon-grid .card {
+    width: 100%;
+    max-height: 300px;
+    padding: 10px 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0,0,0.4); 
+    display: grid;
+    text-align: center;
+}
+
+.pokemon-grid .card img {
+    max-width: 200px;
+    display: block;
+    margin: 10px auto;
+}
+
+
+pagination-controls {
+    text-align: center;
+}

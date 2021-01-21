@@ -1,0 +1,27 @@
+<!-- Pokemon grid list -->
+
+<mat-accordion class="pokemon-grid">
+    <mat-expansion-panel class="card" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 50, currentPage: page, totalItems: totalPokemons }">
+        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+            <h3 class="id">
+                <b>No.{{ pokemon.id }} </b>
+            </h3>
+            <img [src]="pokemon.sprites.front_default" alt="Pokemon">
+            <h3>{{ pokemon.name | uppercase }}</h3>
+        </mat-expansion-panel-header>
+            <p>
+                <b>Type:</b> {{ pokemon.types[0].type.name | titlecase }}
+            </p>
+
+            <p>
+                <b>Height:</b> {{ pokemon.height }}
+            </p>
+
+            <p>
+                <b>Weight:</b> {{ pokemon.weight }}
+            </p>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons()"></pagination-controls>
+<br>
